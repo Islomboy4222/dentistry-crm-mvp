@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PatientsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+// Admin
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
+    return view('/dashboard');
 })->name('dashboard');
+
+Route::middleware('auth')->group(function() {
+    Route::resource('/patients', PatientsController::class);
+});

@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Models;
+use App\Models\Patient;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -28,6 +29,10 @@ class User extends Authenticatable
         'email',
         'password',
     ];
+    public function patients()
+    {
+        return $this->hasOne(Patient::class, 'reg_user_id', 'id');
+    }
 
     /**
      * The attributes that should be hidden for serialization.
@@ -58,4 +63,6 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    
 }
