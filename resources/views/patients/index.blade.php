@@ -21,6 +21,9 @@
                       <td>{{$patient->middle_name}}</td>
                       <td>{{$patient->birth_day}}</td>
                       <td>
+                        <a href="{{route('patients.show',$patient->id)}}" class="btn btn-sm btn-primary">
+                          <i class="fa fa-eye"></i>Ko'rish
+                        </a>
                           <a class="dropdown-item" href="{{route('patients.edit', $patient->id)}}"><i class="fa fa-edit"></i> Tahrirlash</a>
                           <button class="dropdown-item delete-btn" data-url="{{route('patients.destroy', $patient->id)}}"><i class="fa fa-trash"></i> O'chirish</button>
                             

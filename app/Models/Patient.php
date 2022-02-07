@@ -10,7 +10,7 @@ use App\Models\User;
 
 class Patient extends Model
 {
-    use SoftDeletes;
+    use SoftDeletes, HasFactory;
 
     public $table = 'patients';
 

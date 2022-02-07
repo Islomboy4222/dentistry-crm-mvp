@@ -17,7 +17,7 @@ class PatientsController extends Controller
      */
     public function index()
     {
-        $patients = Patient::latest()->paginate(5);
+        $patients = Patient::latest()->paginate(25);
         return view('patients.index', compact('patients'));
     }
 
@@ -67,7 +67,8 @@ class PatientsController extends Controller
      */
     public function show($id)
     {
-        //
+        $patient = Patient::findOrFail($id);
+        return view('patients.show', compact('patient'));
     }
 
     /**
