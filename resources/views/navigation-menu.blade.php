@@ -3,33 +3,45 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
             <div class="flex">
-                <!-- Logo -->
-                <div class="shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}">
-                        <x-jet-application-mark class="block h-9 w-auto" />
-                    </a>
-                </div>
-
-                <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                        
-                        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                            <div class="container-fluid">
-                              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
-                              </button>
-                              <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                                  <li class="nav-item">
-                                    <a class="nav-link active mb-3" aria-current="page" href="{{route('patients.create')}}">Ro'yhatdan o'tkazish</a>
-                                  </li>
-                                </ul>
-                              </div>
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <div class="container-fluid">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                <a class="nav-link active mb-3" aria-current="page" href="{{route('patients.create')}}">Ro'yhatdan o'tkazish</a>
+                                </li>
+                            </ul>
+                            {{-- search --}}
+                            <div class="mx-auto pull-right col-lg-6">
+                                <div class="">
+                                    <form action="{{route('search')}}" method="GET" role="search">
+                
+                                        <div class="input-group">
+                                            <span class="input-group-btn mr-2">
+                                                <button class="btn btn-success" type="submit" title="Search projects">
+                                                    <span class="fa fa-search">S</span>
+                                                </button>
+                                            </span>
+                                            <input type="text" class="form-control mr-2" name="term" placeholder="Ism va Telefon...." id="term">
+                                            <a href="{{route('search')}}">
+                                                <span class="input-group-btn">
+                                                    <button class="btn btn-danger" type="button" title="Refresh page">
+                                                        <span class="fas fa-sync-alt">R</span>
+                                                    </button>
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
-                          </nav>
-                    </x-jet-nav-link>
-                </div>
+                            {{-- end search --}}
+                        </div>
+                    </div>
+                </nav>
+                
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ml-6">

@@ -21,6 +21,7 @@ class CreatePatientsTable extends Migration
             $table->string('last_name')->notNull();
             $table->string('middle_name')->notNull();
             $table->date('birth_day')->notNull();
+            $table->integer('phone_number')->notNull();
             $table->softDeletes();
             $table->timestamps();
         });

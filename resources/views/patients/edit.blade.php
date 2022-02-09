@@ -8,9 +8,7 @@
                     <div class="card-title">Bemorning ma'lumotlarini tahrirlash</div>
                 </div>
                 <div class="card-body">
-                    <a href="{{route('patients.index')}}">
-                        <button class="btn btn-success btn-border btn-round float-right mb-2">Orqaga</button>
-                    </a>
+                    <a href="{{route('patients.index')}} " class="btn btn-sm btn-success float-right mb-2"><i class="fa fa-arrow-left"></i> Orqaga</a>
                     @include('alerts.main')
                     <form method="POST" enctype="multipart/form-data" action="{{route('patients.update', $patient->id)}}">
                         @csrf
@@ -29,6 +27,11 @@
                             <label for="successInput">Sharifi</label>
                             <input type="text" id="middle_name" value="{{$patient->middle_name}}" name="middle_name" class="form-control">
                             <small class="form-text text-muted">Bemorning sharifini yozing.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="successInput">Telefon nomer</label>
+                            <input type="text" id="phone_number" value="{{$patient->phone_number}}" name="phone_number" class="form-control">
+                            <small class="form-text text-muted">Telefon nomerni yozing.</small>
                         </div>
                         <div class="form-group has-feedback">
                             <label for="errorInput">Tug'lgan kun oy yil</label>

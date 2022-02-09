@@ -16,10 +16,11 @@ class PatientFactory extends Factory
     {
         return [
             'reg_user_id' => User::all()->random()->id,
-            'first_name' => $this->faker->name,
-            'last_name' => $this->faker->name,
-            'middle_name' => $this->faker->name,
+            'first_name' => $this->faker->name(),
+            'last_name' => $this->faker->name(),
+            'middle_name' => $this->faker->name(),
             'birth_day' => $this->faker->date(),
+            'phone_number' => $this->faker->numerify('#########'),
         ];
     }
 }

@@ -19,7 +19,8 @@ class Patient extends Model
                         'first_name', 
                         'last_name', 
                         'middle_name', 
-                        'birth_day'];
+                        'birth_day',
+                        'phone_number'];
     
     public function user()
     {

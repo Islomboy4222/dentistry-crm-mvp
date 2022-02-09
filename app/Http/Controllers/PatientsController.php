@@ -44,6 +44,7 @@ class PatientsController extends Controller
             'last_name' => 'required|min:3',
             'middle_name' => 'required|min:3',
             'birth_day' => 'required|date',
+            'phone_number' => 'required|min:9|max:12',
         ]);
 
         $patients = [
@@ -52,6 +53,7 @@ class PatientsController extends Controller
             'last_name' => $request->post('last_name'),
             'middle_name' => $request->post('middle_name'),
             'birth_day' => $request->post('birth_day'),
+            'phone_number' => $request->post('phone_number'),
         ];
 
         Patient::create($patients);
@@ -97,7 +99,8 @@ class PatientsController extends Controller
             'first_name' => 'required',
             'last_name' => 'required',
             'middle_name' => 'required',
-            'birth_day' => 'required'
+            'birth_day' => 'required',
+            'phone_number' => 'required',
         ]);
 
         $patient->update([
@@ -105,7 +108,7 @@ class PatientsController extends Controller
             'last_name' => $request->post('last_name'),
             'middle_name' => $request->post('middle_name'),
             'birth_day' => $request->post('birth_day'),
-            
+            'phone_number' => $request->post('phone_number'),
         ]);
 
         return redirect()->route('patients.index')->with(['success' => "Bemor ma'lumotlari tahrirlandi"]);
