@@ -41,7 +41,7 @@
                             <small class="form-text text-muted">Telefon nomerni yozing.</small>
                         </div>
                         <div class="card-action">
-                            <button class="btn btn-success">Submit</button>
+                            <button class="btn btn-success">Saqlash</button>
                         </div>
                     </form>
                 </div>

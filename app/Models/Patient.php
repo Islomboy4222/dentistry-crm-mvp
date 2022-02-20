@@ -4,8 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes; 
+use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Models\User;
+use App\Models\Treatment;
 
 
 class Patient extends Model
@@ -25,5 +26,10 @@ class Patient extends Model
     public function user()
     {
         return $this->belongsTo(User::class, 'reg_user_id', 'id');
+    }
+
+    public function treatment()
+    {
+        return $this->hasMany(Treatment::class, 'patient_id', 'id');
     }
 }

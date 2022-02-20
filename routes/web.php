@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PatientsController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\TreatmentsController;
+
 
 
 /*
@@ -17,7 +19,7 @@ use App\Http\Controllers\SearchController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 
@@ -28,7 +30,9 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 Route::middleware('auth')->group(function() {
-    Route::resource('/patients', PatientsController::class);
-    //Search
     Route::get('/search', [SearchController::class, 'search'])->name('search');
+    Route::resource('/patients', PatientsController::class);
+    Route::get('/treatments/{id}', [TreatmentsController::class, 'treatments'])->name('treatments');
+    Route::post('/store', [TreatmentsController::class, 'store'])->name('store');
+
 });

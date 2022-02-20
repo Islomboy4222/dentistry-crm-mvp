@@ -39,7 +39,7 @@
                             <small class="form-text text-muted">Bemorninf tug'ilgan kun oy yilini yozing.</small>
                         </div>
                         <div class="card-action">
-                            <button class="btn btn-success">Submit</button>
+                            <button class="btn btn-success">Saqlash</button>
                         </div>
                     </form>
                 </div>

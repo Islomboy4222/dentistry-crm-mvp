@@ -41,7 +41,7 @@
                         <div class="col-xl-3 col-lg-2">
                             <div class="logo">
                                 <a href="#">
-                                    <img src="/img/tooth.jpg" width="70" height="50">
+                                    <img src="/img/tooth1.jpg" width="70" height="50">
                                 </a>
                             </div>
                         </div>
@@ -55,7 +55,6 @@
                             <div class="mx-auto pull-right col-lg-8">
                                 <div class="">
                                     <form action="{{route('search')}}" method="GET" role="search">
-                
                                         <div class="input-group float-left">
                                             <input type="text" class="form-control " name="term" placeholder="Ism, Familiya va Telefon...." id="term">
                                             <span class="input-group-btn">
@@ -160,6 +159,7 @@
     $('.js-example-basic-multiple').select2();
 });
     </script>
+    @stack('scripts')
 </body>
 
 </html>
