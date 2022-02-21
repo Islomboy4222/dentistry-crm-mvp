@@ -34,5 +34,6 @@ Route::middleware('auth')->group(function() {
     Route::resource('/patients', PatientsController::class);
     Route::get('/treatments/{id}', [TreatmentsController::class, 'treatments'])->name('treatments');
     Route::post('/store', [TreatmentsController::class, 'store'])->name('store');
+    
 
 });
