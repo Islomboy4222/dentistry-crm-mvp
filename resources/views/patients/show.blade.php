@@ -2,6 +2,7 @@
 @section('content')
     <div class="row g-2">
         <div class="col-md-4">
+            @include('alerts.main')
             <div class="card-header m-3 py-3">
                 <h5 class="m-0 font-weight-bold text-primary ">
                     {{$patient->first_name}} - ma'lumoti

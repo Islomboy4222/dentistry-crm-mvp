@@ -31,7 +31,7 @@ class TreatmentsController extends Controller
 
         Treatment::create($treatments);
 
-        return redirect()->route('patients.index    ')->with('success', "Muolaja qo'shildi");
+        return redirect()->route('patients.show',$request->id)->with('success', "Muolaja qo'shildi");
         
     }
 }

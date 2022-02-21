@@ -15,11 +15,10 @@
                     <form class="form_val" method="POST" aria-required="" enctype="multipart/form-data" action="{{route('store')}}">
                         @csrf
                         <input type="hidden" name="tooth_position" required>
+                        <input type="hidden" name="id" value="{{$id}}" required>
                         <input type="hidden" name="patient_id" value="{{$id}}">
                         <div class="form-group">
-                            <label for="successInput">Muolajani tanlang</label>
                             <select name="treated_id" class="form-select" aria-label="Default select example">
-                                <option selected>Muolaja turini tanlang</option>
                                 @foreach ($treatments as $key => $treatment)
                                     <option class="" value="{{$treatment}}">{{$key}}</option>
                                 @endforeach
