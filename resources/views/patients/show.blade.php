@@ -63,15 +63,12 @@
                                 @foreach ($patient->treatment as $item)
                                     <tr>
                                         <td>{{$item->tooth_position}}</td>
-                                        <td>{{$item->treated_id}}</td>
+                                        <td>{{$type[$item->treated_id]}}</td>
                                         <td>{{$item->created_at->format('d-m-Y')}}</td>
                                         <td>
                                         <td>
-                                            <a href="#ModalTable" class="btn btn-success" data-toggle="modal" data-target="#ModalTable">
-                                                <span><i class="fa fa-eye"></i> Ko'rish</span>
-                                            </a>
+                                            <button class="btn btn-sm btn-primary load-treatment" data-url="{{ route('modal', $item->id) }}">Ko'rish</button>
                                         </td>
-                                        
                                     </tr>
                                 @endforeach
                             </tbody>
@@ -81,5 +78,7 @@
             </div>
         </div>
     </div>
-    @include('treatments.modal')
 @endsection
+@push('outer-elements')
+    @include('treatments.modal')
+@endpush

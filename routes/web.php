@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PatientsController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\TreatmentsController;
-
+use App\Http\Controllers\ModalController;
 
 
 /*
@@ -34,6 +34,6 @@ Route::middleware('auth')->group(function() {
     Route::resource('/patients', PatientsController::class);
     Route::get('/treatments/{id}', [TreatmentsController::class, 'treatments'])->name('treatments');
     Route::post('/store', [TreatmentsController::class, 'store'])->name('store');
-    
+    Route::get('/modal/{id}', [ModalController::class, 'modal'])->name('modal');
 
 });

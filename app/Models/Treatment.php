@@ -25,9 +25,14 @@ class Treatment extends Model
     }
 
     public static $TYPE = [
-        'Plonba' => 1,
-        'Kanal plonba' => 2,
-        'Protes' => 3,
-        'Kolonka' => 4,
+        '1' => 'Plonba',
+        '2' => 'Kanal plonba',
+        '3' => 'Protes',
+        '4' => 'Kolonka',
     ];
+
+    public function getTypeStringAttribute()
+    {
+        return self::$TYPE[$this->treated_id];
+    }
 }

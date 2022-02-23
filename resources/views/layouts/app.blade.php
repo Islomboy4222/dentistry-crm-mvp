@@ -40,7 +40,7 @@
                     <div class="row align-items-center">
                         <div class="col-xl-3 col-lg-2">
                             <div class="logo">
-                                <a href="#">
+                                <a href="{{route('patients.index')}}">
                                     <img src="/img/tooth1.jpg" width="70" height="50">
                                 </a>
                             </div>
@@ -113,6 +113,7 @@
         </div>
     </div>
 </footer>
+@stack('outer-elements')
 <!-- footer end  -->    
     <!-- JS here -->
     <script src="/js/vendor/modernizr-3.5.0.min.js"></script>
@@ -141,6 +142,7 @@
     <script src="/js/mail-script.js"></script>
 
     <script src="/js/main.js"></script>
+    <script src="/js/ajax-modal.js"></script>
     <script>
         $('#datepicker').datepicker({
             iconsLibrary: 'fontawesome',
@@ -159,6 +161,7 @@
     $('.js-example-basic-multiple').select2();
 });
     </script>
+
     @stack('scripts')
 </body>
 

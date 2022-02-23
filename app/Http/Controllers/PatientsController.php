@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Patient;
 use App\Models\User;
+use App\Models\Treatment;
 use Auth;
 
 class PatientsController extends Controller
@@ -70,7 +71,8 @@ class PatientsController extends Controller
     public function show($id)
     {
         $patient = Patient::findOrFail($id);
-        return view('patients.show', compact('patient'));
+        $type = Treatment::$TYPE;
+        return view('patients.show', compact('patient','type'));
     }
 
     /**

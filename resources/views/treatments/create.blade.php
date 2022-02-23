@@ -20,7 +20,7 @@
                         <div class="form-group">
                             <select name="treated_id" class="form-select" aria-label="Default select example">
                                 @foreach ($treatments as $key => $treatment)
-                                    <option class="" value="{{$treatment}}">{{$key}}</option>
+                                    <option class="" value="{{$key}}">{{$treatment}}</option>
                                 @endforeach
                             </select>
                         </div>

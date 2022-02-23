@@ -34,4 +34,5 @@ class TreatmentsController extends Controller
         return redirect()->route('patients.show',$request->id)->with('success', "Muolaja qo'shildi");
         
     }
+    
 }
