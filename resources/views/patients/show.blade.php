@@ -33,6 +33,10 @@
                                     <td>{{$patient->birth_day}}</td>
                                 </tr>
                                 <tr>
+                                    <td>Muolaja sanasi</td>
+                                    <td>{{$patient->created_at->format('d-m-Y')}}</td>
+                                </tr>
+                                <tr>
                                     <td>Telefon nomer</td>
                                     <td>{{$patient->phone_number}}</td>
                                 </tr>
@@ -57,7 +61,7 @@
                             <thead>
                                 <th>№</th>
                                 <th>Muolaja turi</th>
-                                <th>Muolaja vaqti</th>
+                                <th>Muolaja sanasi</th>
                             </thead>
                             <tbody>
                                 @foreach ($patient->treatment as $item)
@@ -67,7 +71,7 @@
                                         <td>{{$item->created_at->format('d-m-Y')}}</td>
                                         <td>
                                         <td>
-                                            <button class="btn btn-sm btn-primary load-treatment" data-url="{{ route('modal', $item->id) }}">Ko'rish</button>
+                                            <button class="btn btn-sm btn-success load-treatment" data-url="{{ route('modal', $item->id) }}">Ko'rish</button>
                                         </td>
                                     </tr>
                                 @endforeach

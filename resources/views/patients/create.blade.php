@@ -12,33 +12,43 @@
                 <div class="card-body">
                     <a href="{{route('patients.index')}} " class="btn btn-sm btn-success float-right mb-2"><i class="fa fa-arrow-left"></i> Orqaga</a>
                     @include('alerts.main')
-                    <form method="POST" enctype="multipart/form-data" action="{{route('patients.store')}}">
+                    <form method="POST" enctype="multipart/form-data" class="needs-validation" novalidate action="{{route('patients.store')}}">
                         @csrf
 
                         <div class="form-group">
-                            <label for="successInput">Ismi</label>
-                            <input type="text" id="first_name" name="first_name" class="form-control">
-                            <small class="form-text text-muted">Bemorning ismini yozing.</small>
+                            <label class="form-label">Ismi</label>
+                            <input type="text" value="{{old("first_name")}}" name="first_name" class="form-control @error('first_name') is-invalid @enderror">
+                            <div class="invalid-feedback">
+                                Iltimos bemorning ismini yozing.
+                            </div>
                         </div>
                         <div class="form-group">
-                            <label for="successInput">Familyasi</label>
-                            <input type="text" id="last_name" name="last_name" class="form-control">
-                            <small class="form-text text-muted">Bemorning familyasini yozing.</small>
+                            <label class="form-label" for="successInput">Familyasi</label>
+                            <input type="text" value="{{old('last_name')}}" name="last_name" class="form-control @error('last_name') is-invalid @enderror">
+                            <div class="invalid-feedback">
+                                Iltimos bemorning familyasini yozing.
+                            </div>
                         </div>
                         <div class="form-group">
-                            <label for="successInput">Sharifi</label>
-                            <input type="text" id="middle_name" name="middle_name" class="form-control">
-                            <small class="form-text text-muted">Bemorning sharifini yozing.</small>
-                        </div>
-                        <div class="form-group has-feedback">
-                            <label for="errorInput">Tug'lgan kun oy yil</label>
-                            <input type="date" id="birth_day" name="birth_day" class="form-control">
-                            <small class="form-text text-muted">Bemorninf tug'ilgan kun oy yilini yozing.</small>
+                            <label class="form-label">Sharifi</label>
+                            <input type="text" value="{{old('middle_name')}}" id="middle_name" name="middle_name" class="form-control @error('middle_name') is-invalid @enderror">
+                            <div class="invalid-feedback">
+                                Iltimos bemorning sharifini yozing.
+                            </div>
                         </div>
                         <div class="form-group">
-                            <label for="successInput">Telefon nomer</label>
-                            <input type="number" id="phone_number" name="phone_number" class="form-control">
-                            <small class="form-text text-muted">Telefon nomerni yozing.</small>
+                            <label class="form-label">Tug'lgan sanasi</label>
+                            <input type="date" value="{{old('birth_day')}}" name="birth_day" class="form-control @error('birth_day') is-invalid @enderror">
+                            <div class="invalid-feedback">
+                                Iltimos bemorning tug'ulgan sanasini yozing.
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Telefon nomeri</label>
+                            <input type="number" value="{{old('phone_number')}}" name="phone_number" class="form-control @error('phone_number') is-invalid @enderror">
+                            <div class="invalid-feedback">
+                                Iltimos bemorning telefon nomerini yozing.
+                            </div>
                         </div>
                         <div class="card-action">
                             <button class="btn btn-success">Saqlash</button>
