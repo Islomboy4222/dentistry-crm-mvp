@@ -3576,7 +3576,7 @@ tbody.collapse.show {
 .btn-group>.btn-group:not(:last-child)>.btn,
 .btn-group>.btn:not(:last-child):not(.dropdown-toggle) {
     border-top-right-radius: 0;
-    border-bottom-right-radius: 0
+    border-bottom-right-radius: 0;
 }
 
 .btn-group>.btn-group:not(:first-child)>.btn,
@@ -4596,7 +4596,7 @@ tbody.collapse.show {
 }
 
 .navbar-dark .navbar-brand {
-    color: #fff
+    color: rgb(42 35 35 / 50%)
 }
 
 .navbar-dark .navbar-brand:focus,
@@ -4605,7 +4605,7 @@ tbody.collapse.show {
 }
 
 .navbar-dark .navbar-nav .nav-link {
-    color: rgba(255, 255, 255, .5)
+    color: rgb(42 35 35 / 50%)
 }
 
 .navbar-dark .navbar-nav .nav-link:focus,
@@ -6431,7 +6431,7 @@ button.bg-light:hover {
 }
 
 .bg-dark {
-    background-color: #343a40!important
+    background-color: #ffff!important
 }
 
 a.bg-dark:focus,

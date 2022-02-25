@@ -11,7 +11,7 @@
             <div class="card-body text-gray-900">
                 <div class="card mb-3">
                     <div class="">
-                        <a href="{{route('treatments', $patient->id)}} " class="btn btn-sm btn-success float-right mr-2 mt-2"><i class="fa fa-plus"></i> Qo'shish</a>
+                        <a href="{{route('treatments', $patient->id)}} " class="btn btn-sm btn-primary float-right mr-2 mt-2"><i class="fa fa-plus"></i> Qo'shish</a>
                     </div>
                     <div class="card-body flex">
                         <table class="table table-striped table-striped-bg-default ">
@@ -71,7 +71,20 @@
                                         <td>{{$item->created_at->format('d-m-Y')}}</td>
                                         <td>
                                         <td>
-                                            <button class="btn btn-sm btn-success load-treatment" data-url="{{ route('modal', $item->id) }}">Ko'rish</button>
+                                            <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                                                <div class="btn-group" role="group">   
+                                                    <button class="btn btn-sm btn-info load-treatment" data-url="{{ route('modal', $item->id) }}">Ko'rish</button>
+                                                    <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    </button>
+                                                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                                        <form method="POST" onsubmit="return confirm('O`chirish aniqmi?')" action="{{route('destroy', $item->id)}}">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button class="dropdown-item" type="submit"><i class="fa fa-trash"></i>O'chirish</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div> 
                                         </td>
                                     </tr>
                                 @endforeach

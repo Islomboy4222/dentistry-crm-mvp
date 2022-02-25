@@ -30,10 +30,13 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 Route::middleware('auth')->group(function() {
-    Route::get('/search', [SearchController::class, 'search'])->name('search');
+    //Patients
     Route::resource('/patients', PatientsController::class);
+
+    //Treatments
     Route::get('/treatments/{id}', [TreatmentsController::class, 'treatments'])->name('treatments');
     Route::post('/store', [TreatmentsController::class, 'store'])->name('store');
+    Route::delete('/destroy/{id}', [TreatmentsController::class, 'destroy'])->name('destroy');
     Route::get('/modal/{id}', [ModalController::class, 'modal'])->name('modal');
 
 });

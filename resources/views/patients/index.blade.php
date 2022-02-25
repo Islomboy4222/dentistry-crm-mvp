@@ -1,7 +1,10 @@
 @extends('layouts.app')
   @section('content')
+  <div class="container-fluid">
+    
+    <div class="card">
         @include('alerts.main')
-       <div>
+      <div>
         <table class="table">
           <thead>
               <tr>
@@ -42,9 +45,11 @@
                   </tr>
               @endforeach
             </tbody>
-      </table>
-      <nav class="mb-4">
-          {{$patients->links('pagination::bootstrap-4')}}
-      </nav>
-       </div>
+        </table>
+        <nav class="mb-4">
+            {{$patients->links('pagination::bootstrap-4')}}
+        </nav>
+      </div>
+    </div>
+  </div>
   @endsection

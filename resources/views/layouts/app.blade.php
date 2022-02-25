@@ -27,74 +27,61 @@
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
 </head>
 
-<body>
-    <!--[if lte IE 9]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-        <![endif]-->
-
+<body class="bg-light">
     <!-- header-start -->
+    <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark">
+        <a class="navbar-brand" href="{{route('patients.index')}}">Stomatologiya</a>
+        <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+  
+        <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#"></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{route('patients.create')}}">Ro'yhatdan o'tirish</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"></a>
+            </li>
+            <li class="nav-item dropdown dropend">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{Auth::user()->name}}</a>
+                <div class="dropdown-menu">
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <x-jet-dropdown-link href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                        this.closest('form').submit();">
+                            {{ __('Chiqish') }}
+                        </x-jet-dropdown-link>
+                    </form>
+                </div>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0" action="{{route('patients.index')}}" method="GET" role="search">
+            <input class="form-control mr-sm-2" name="term" type="text" placeholder="Ism Familya va Telefon . . ." aria-label="Search">
+            <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Qidiruv</button>
+          </form>
+        </div>
+      </nav>
     <header>
         <div class="header-area ">
             <div id="sticky-header" class="main-header-area">
                 <div class="container">
                     <div class="row align-items-center">
-                        <div class="col-xl-3 col-lg-2">
-                            <div class="logo">
-                                <a href="{{route('patients.index')}}">
-                                    <img src="/img/tooth1.jpg" width="70" height="50">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-xl-6 col-lg-7">
-                            <div class="float-right">
-                                <a href="{{route('patients.create')}}">
-                                    <button type="button" class="btn btn">Ro'yhatdan o'tirish</button>
-                                </a>
-                            </div>
-                            {{-- search --}}
-                            <div class="mx-auto pull-right col-lg-8">
-                                <div class="">
-                                    <form action="{{route('search')}}" method="GET" role="search">
-                                        <div class="input-group float-left">
-                                            <input type="text" class="form-control " name="term" placeholder="Ism, Familiya va Telefon...." id="term">
-                                            <span class="input-group-btn">
-                                                <button class="btn btn-primary" type="submit" title="Search projects">
-                                                    <span class="fa fa-search"></span>
-                                                </button>
-                                            </span>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                            {{-- end search --}}
-                        </div>
-                        {{-- dropdown --}}
-                        <div class="btn-group">
-                            <button type="button" class="btn btn">{{Auth::user()->name}}</button>
-                            <button type="button" class="btn btn dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              <span class="sr-only">Toggle Dropdown</span>
-                            </button>
-                            <div class="dropdown-menu">
-                                <form method="POST" action="{{ route('logout') }}">
-                                    @csrf
-                                    <x-jet-dropdown-link href="{{ route('logout') }}"
-                                             onclick="event.preventDefault();
-                                                    this.closest('form').submit();">
-                                        {{ __('Chiqish') }}
-                                    </x-jet-dropdown-link>
-                                </form>
-                            </div>
-                          </div>
-                        {{-- dropdown --}}
+                        <button type="button" class="btn btn dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
     </header>
-    <div class="container-fluid">
-        @yield('content')
-    </div>
-
+    <main class="container mt-4 mb-4">
+            @yield('content')
+    </main>
 <!-- footer start -->
 <footer class="footer">
     </div>

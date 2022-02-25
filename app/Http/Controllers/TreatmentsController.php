@@ -34,5 +34,13 @@ class TreatmentsController extends Controller
         return redirect()->route('patients.show',$request->id)->with('success', "Muolaja qo'shildi");
         
     }
+
+    public function destroy($id)
+    {
+        $delete = Treatment::findOrFail($id);
+        $delete->delete();
+
+        return redirect()->route('patients.index')->with(['delete' => "Kasalik o'chirildi"]);
+    }
     
 }
