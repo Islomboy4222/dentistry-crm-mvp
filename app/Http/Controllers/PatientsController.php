@@ -19,7 +19,7 @@ class PatientsController extends Controller
     public function index(Request $request)
     {
         $patients = Patient::latest()->paginate(25);
-        $term = $request->post('term');
+        $term = $request->get('term');
         if ($term != '') {
             $term = '%'.trim($term).'%';
             $patients = Patient::where('first_name', 'LIKE', $term)

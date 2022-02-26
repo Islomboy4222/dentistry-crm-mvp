@@ -5,7 +5,7 @@ use App\Http\Controllers\PatientsController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\TreatmentsController;
 use App\Http\Controllers\ModalController;
-
+use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,4 +39,8 @@ Route::middleware('auth')->group(function() {
     Route::delete('/destroy/{id}', [TreatmentsController::class, 'destroy'])->name('destroy');
     Route::get('/modal/{id}', [ModalController::class, 'modal'])->name('modal');
 
+    //Profile
+    Route::get('/profile', [ProfileController::class, 'profile'])->name('profile');
+    Route::put('/profileUpdate', [ProfileController::class, 'profileUpdate'])->name('profileUpdate');
+    Route::put('/password', [ProfileController::class, 'profilePassword'])->name('profilePassword');
 });

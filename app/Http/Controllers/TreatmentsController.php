@@ -40,7 +40,7 @@ class TreatmentsController extends Controller
         $delete = Treatment::findOrFail($id);
         $delete->delete();
 
-        return redirect()->route('patients.index')->with(['delete' => "Kasalik o'chirildi"]);
+        return back()->with(['delete' => "Kasalik o'chirildi"]);
     }
     
 }

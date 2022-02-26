@@ -57,6 +57,9 @@
                             {{ __('Chiqish') }}
                         </x-jet-dropdown-link>
                     </form>
+                    <x-jet-dropdown-link href="{{ route('profile') }}">
+                            {{ __('Profile') }}
+                    </x-jet-dropdown-link>
                 </div>
             </li>
           </ul>
