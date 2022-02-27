@@ -35,7 +35,8 @@ class ProfileController extends Controller
     public function profilePassword(Request $request)
     {
         $request->validate([
-            'password' => 'required'
+            'password' => 'required|min:6|required_with:password_confirmation|same:password_confirmation',
+            'password_confirmation' => 'min:6'
         ]);
 
         $password = auth()->user()->id;

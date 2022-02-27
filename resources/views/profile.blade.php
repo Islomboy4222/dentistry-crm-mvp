@@ -46,11 +46,11 @@
                         @method('PUT')
                         <div class="form-group">
                             <label for="">Yangi parol</label>
-                            <input class="form-control" name="password" type="password" required>
+                            <input class="form-control" name="password" type="password" >
                         </div>
                         <div class="form-group">
                             <label for="">Yangi parolni tastiqlash</label>
-                            <input class="form-control"  name="password_confirmation"  type="password" required>
+                            <input class="form-control"  name="password_confirmation"  type="password">
                         </div>
                         <button type="submit" class="btn btn-primary">Saqlash</button>
                     </form>
